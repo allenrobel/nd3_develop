@@ -4,6 +4,15 @@ First, this repository probably isn't of much interest to anyone but me...
 
 ## 1. build the container
 
+### 1a. You may have to do this first.
+
+```bash
+podman machine init
+podman machine start
+```
+
+### 1b. Now do the actual build
+
 ```bash
 cd $HOME/repos/mcp/nd3_develop
 podman build -t mcp-nd-developer .
