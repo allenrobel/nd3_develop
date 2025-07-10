@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "NexusDashboardAnsibleDeveloper": {
+      "args": [
+        "run",
+        "-i",
+        "mcp-nd-developer"
+      ],
+      "command": "/opt/podman/bin/podman"
+    }
+  }
+}
