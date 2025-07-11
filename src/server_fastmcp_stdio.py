@@ -6,7 +6,6 @@ import json
 from pathlib import Path
 
 from fastmcp import FastMCP
-# from fastmcp import FastMCP
 from fastmcp.resources import FileResource
 
 def get_file_path(file_path: str) -> Path:
@@ -41,7 +40,6 @@ mcp: FastMCP = FastMCP(
 )
 
 # VRF Payload Markdown Resource
-# vrf_payload_md_path = Path("./payloads/v3/md/vrf.md").resolve()
 vrf_payload_md_path = get_file_path("payloads/v3/md/vrf.md")
 if vrf_payload_md_path.exists():
     vrf_payload_md_resource = FileResource(
@@ -56,7 +54,6 @@ if vrf_payload_md_path.exists():
 
 
 # VRF Attachment Payload Markdown Resource
-# vrf_attachment_payload_md_path = Path("./payloads/v3/md/vrf_attachment.md").resolve()
 vrf_attachment_payload_md_path = get_file_path("payloads/v3/md/vrf_attachment.md")
 if vrf_attachment_payload_md_path.exists():
     vrf_attachment_payload_md_resource = FileResource(
@@ -70,35 +67,76 @@ if vrf_attachment_payload_md_path.exists():
     mcp.add_resource(vrf_attachment_payload_md_resource)
 
 
+@mcp.prompt(
+    name="Ansible Developer Role",
+    description="Loads and returns the Ansible developer role prompt."
+)
+async def prompt_developer_role() -> str:
+    """
+    Prompt that describes a Python developer writing an Ansible module.
 
-# @mcp.prompt(
-# name="ansible_developer_role",
-# description="Loads and returns the Ansible developer role prompt from a specified file."
-# )
-# async def ansible_developer_role(file_path: str = "prompts/ansible_developer_role.json") -> dict:
-#     """
-#     Prompt that describes a Python developer writing an Ansible module.
-#     Args:
-#     file_path (str): Path to the prompt template file.
-#     Returns:
-#     str: The contents of the prompt file
-#     """
-#     return load_json_file(file_path)
+    Returns:
+
+    str: The contents of the prompt file
+    """
+    return load_file("prompts/developer_role.md")
+
+@mcp.prompt(
+    name="Project Shared Enums",
+    description="Loads and returns the project shared enums prompt."
+)
+async def prompt_project_shared_enums() -> str:
+    """
+    Prompt that describes the shared enums used in this project.
+
+    Returns:
+
+    str: The contents of the prompt file
+    """
+    return load_file("prompts/project_shared_enums.md")
+
+@mcp.prompt(
+    name="Project Shared Models",
+    description="Loads and returns the project shared Pydantic models prompt."
+)
+async def prompt_project_shared_models() -> str:
+    """
+    The shared Pydantic models used in this project.
+
+    Returns:
+
+    str: The contents of the prompt file
+    """
+    return load_file("prompts/project_shared_models.md")
+
+@mcp.prompt(
+    name="Project Shared Validators",
+    description="Loads and returns the project shared validators prompt."
+)
+async def prompt_project_shared_validators() -> str:
+    """
+    Prompt that describes the shared validators used in this project.
+
+    Returns:
+
+    str: The contents of the prompt file
+    """
+    return load_file("prompts/project_shared_validators.md")
 
 
 @mcp.prompt(
-name="ansible_developer_role",
-description="Loads and returns the Ansible developer role prompt from a specified file."
+    name="Task VRF Module Create",
+    description="Loads and returns the VRF module create prompt."
 )
-async def ansible_developer_role(file_path: str = "prompts/ansible_developer_role.md") -> str:
+async def prompt_task_vrf_module_create() -> str:
     """
-    Prompt that describes a Python developer writing an Ansible module.
-    Args:
-    file_path (str): Path to the prompt template file.
+    Prompt that describes the requirements for creating a VRF module.
+
     Returns:
+
     str: The contents of the prompt file
     """
-    return load_file(file_path)
+    return load_file("prompts/task_vrf_module_create.md")
 
 
 @mcp.resource(
