@@ -1,10 +1,12 @@
-# Pydantic Models
+# Shared Pydantic Models
 
 The Ansible Module Project leverages the following shared Pydantic models
 
 ## IPv4CidrHostModel
 
-Validates an CIDR-format IPv4 host address.
+### Description
+
+Validates a CIDR-format IPv4 host address.
 
 ### Project Location
 
@@ -29,6 +31,8 @@ except ValueError as error:
 ```
 
 ## IPv4HostModel
+
+### Description
 
 Validates an IPv4 host address without prefix
 
@@ -56,7 +60,9 @@ except ValueError as error:
 
 ## IPv6CidrHostModel
 
-Validates an CIDR-format IPv6 host address.
+### Description
+
+Validates a CIDR-format IPv6 host address.
 
 ### Project Location
 
@@ -81,6 +87,8 @@ except ValueError as error:
 ```
 
 ## IPv6HostModel
+
+### Description
 
 Validates an IPv6 host address without prefix.
 
