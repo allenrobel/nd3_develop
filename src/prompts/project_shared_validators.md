@@ -7,14 +7,20 @@ independently from these models if needed.
 
 ## validate_ipv4_cidr_host
 
+### Description
+
+Validates an IPv4 CIDR address e.g. 10.1.1.1/24
+
 ### Project Location
 
 plugins/module_utils/common/validators/ipv4_cidr_host.py
 
-### Description
+### Returns
 
-- Return True if value is an IPv4 CIDR-format host address.
-- Return False otherwise.
+bool
+
+- True if value is an IPv4 CIDR-format host address.
+- False otherwise.
 
 Where: value is a string representation of CIDR-format IPv4 address.
 
@@ -30,10 +36,6 @@ Where: value is a string representation of CIDR-format IPv4 address.
 
 None
 
-### Returns
-
-bool
-
 ### Example inputs and corresponding return values
 
 - value: "10.10.10.1/24"  -> True
@@ -43,14 +45,20 @@ bool
 
 ## validate_ipv4_host
 
+### Description
+
+Validates an IPv4 host address without prefix e.g. 10.1.1.1
+
 ### Project Location
 
 plugins/module_utils/common/validators/ipv4_host.py
 
-### Description
+### Returns
 
-- Return True if value is an IPv4 host address without a prefix.
-- Return False otherwise.
+bool
+
+- True if value is an IPv4 host address without a prefix.
+- False otherwise.
 
 Where: value is a string representation an IPv4 address without a prefix.
 
@@ -66,10 +74,6 @@ Where: value is a string representation an IPv4 address without a prefix.
 
 None
 
-### Returns
-
-bool
-
 ### Example inputs and corresponding return values
 
 - value: "10.10.10.1"     -> True
@@ -79,14 +83,20 @@ bool
 
 ## validate_ipv4_multicast_group_address
 
+### Description
+
+Validates an IPv4 multicast address without prefix e.g. 225.1.1.1
+
 ### Project Location
 
 plugins/module_utils/common/validators/ipv4_multicast_group_address.py
 
-### Description
+### Returns
 
-- Return True if value is an IPv4 multicast group address without prefix.
-- Return False otherwise.
+bool
+
+- True if value is an IPv4 multicast group address without prefix.
+- False otherwise.
 
 Where: value is a string representation an IPv4 multicast group address without prefix.
 
@@ -102,10 +112,6 @@ Where: value is a string representation an IPv4 multicast group address without 
 
 None
 
-### Returns
-
-bool
-
 ### Example inputs and corresponding return values
 
 - value: "224.10.10.1"     -> True
@@ -116,14 +122,20 @@ bool
 
 ## validate_ipv6_cidr_host
 
+### Description
+
+Validates an IPv6 CIDR address e.g. 2001::1/128
+
 ### Project Location
 
 plugins/module_utils/common/validators/ipv6_cidr_host.py
 
-### Description
+### Returns
 
-- Return True if value is an IPv6 CIDR-format host address.
-- Return False otherwise.
+bool
+
+- True if value is an IPv6 CIDR-format host address.
+- False otherwise.
 
 Where: value is a string representation of CIDR-format IPv6 address.
 
@@ -139,10 +151,6 @@ Where: value is a string representation of CIDR-format IPv6 address.
 
 None
 
-### Returns
-
-bool
-
 ### Example inputs and corresponding return values
 
 - value: "2001::1/128"         -> True
@@ -152,14 +160,20 @@ bool
 
 ## validate_ipv6_host
 
+### Description
+
+Validates an IPv6 host address without prefix e.g. 2001::1
+
 ### Project Location
 
 plugins/module_utils/common/validators/ipv6_host.py
 
-### Description
+### Returns
 
-- Return True if value is an IPv6 host address without a prefix.
-- Return False otherwise.
+bool
+
+- True if value is an IPv6 host address without a prefix.
+- False otherwise.
 
 Where: value is a string representation an IPv6 address without a prefix.
 
@@ -174,10 +188,6 @@ Where: value is a string representation an IPv6 address without a prefix.
 ### Raises
 
 None
-
-### Returns
-
-bool
 
 ### Example inputs and corresponding return values
 
